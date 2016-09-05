@@ -34,7 +34,11 @@ public class MainActivity extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				addItemToDatasetStart();
+				int firstCompletelyVisibleItemPosition = layoutManager.findFirstCompletelyVisibleItemPosition();
 				adapter.datasetChanged(dataset);
+				if (firstCompletelyVisibleItemPosition == 0) {
+					recyclerView.scrollToPosition(0);
+				}
 			}
 		});
 	}

@@ -42,6 +42,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
 	public void datasetChanged(List<MainModel> dataset) {
 		this.dataset = dataset;
-		notifyDataSetChanged();
+		notifyItemInserted(0);
 	}
 }
