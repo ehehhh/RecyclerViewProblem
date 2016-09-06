@@ -44,7 +44,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainViewHolder> {
 
 	public void datasetChanged(List<MainModel> dataset) {
 		DiffUtil.DiffResult diffResult = calculateDiffResult(dataset);
-		this.dataset = dataset;
+		this.dataset = new ArrayList<>(dataset);
 		diffResult.dispatchUpdatesTo(this);
 	}
 
